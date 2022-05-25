@@ -1,0 +1,47 @@
+# 以Deployment部署Pod
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spingboot-k8s-test-demo
+spec:
+  selector:
+    matchLabels:
+      app: spingboot-k8s-test-demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spingboot-k8s-test-demo
+    spec:
+      containers:
+        - name: spingboot-k8s-test-demo
+          image: docker pull registry.cn-hangzhou.aliyuncs.com/xiangwei-public/spingboot-k8s-test-demo:1.0.5-SNAPSHOT
+          ports:
+            - containerPort: 9090
+---
+# 创建Pod的Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: spingboot-k8s-test-demo
+spec:
+  ports:
+    - port: 9090
+      protocol: TCP
+      targetPort: 9090
+  selector:
+    app: spingboot-k8s-test-demo
+---
+# 创建Ingress，定义访问规则
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: springboot-demo
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: spingboot-k8s-test-demo
+              servicePort: 9090
