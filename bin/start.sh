@@ -14,7 +14,7 @@ if [ $psid -ne 0 ]; then
   kill -9 $psid
 fi
 
-nohup java -jar $psth/springboot-demo-k8s-cicd-test-1.0.6-SNAPSHOT.jar >$psth/springboot-demo-log.log 2>&1 &
+nohup java -jar $psth/springboot-demo-k8s-cicd-test-1.1.0-RELEASE.jar >$psth/springboot-demo-log.log 2>&1 &
 
 sleep 5
 

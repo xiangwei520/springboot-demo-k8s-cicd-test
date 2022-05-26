@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: springboot-demo-k8s-cicd-test
-          image: registry.cn-hangzhou.aliyuncs.com/xiangwei-public/springboot-demo-k8s-cicd-test:1.0.6-SNAPSHOT
+          image: registry.cn-hangzhou.aliyuncs.com/xiangwei-public/springboot-demo-k8s-cicd-test:1.1.0-RELEASE
           ports:
             - containerPort: 9090
 ---

@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>${name}</artifactId>
 
-    <version>1.0.6-SNAPSHOT</version>
+    <version>1.1.0-RELEASE</version>
 
     <name>springboot-demo-k8s-cicd-test</name>
     <description>Demo project for Spring Boot</description>
