@@ -1,6 +1,6 @@
 psid=0
 
-javaps=`jps -l | grep spingboot-k8s-test-demo`
+javaps=`jps -l | grep springboot-demo-k8s-cicd-test`
 echo "javaps= $javaps"
 if [ -n "$javaps" ]; then
    psid=`echo $javaps | awk '{print $1}'`
@@ -14,6 +14,6 @@ fi
 
 sleep 5
 
-echo "================================================"
-echo "   spingboot-k8s-test-demo stop successfully"
-echo "================================================"
+echo "==================================================="
+echo "   springboot-demo-k8s-cicd-test stop successfully"
+echo "==================================================="

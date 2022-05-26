@@ -2,7 +2,7 @@ psid=0
 
 psth=/opt/springboot
 
-javaps=`jps -l | grep spingboot-k8s-test-demo`
+javaps=`jps -l | springboot-demo-k8s-cicd-test`
 echo "javaps= $javaps"
 if [ -n "$javaps" ]; then
    psid=`echo $javaps | awk '{print $1}'`
@@ -14,10 +14,10 @@ if [ $psid -ne 0 ]; then
   kill -9 $psid
 fi
 
-nohup java -jar $psth/spingboot-k8s-test-demo-1.0.5-SNAPSHOT.jar >$psth/springboot-demo-log.log 2>&1 &
+nohup java -jar $psth/springboot-demo-k8s-cicd-test-1.0.5-SNAPSHOT.jar >$psth/springboot-demo-log.log 2>&1 &
 
 sleep 5
 
-echo "=================================================="
-echo "   spingboot-k8s-test-demo  start successfully"
-echo "=================================================="
+echo "====================================================="
+echo "   springboot-demo-k8s-cicd-test  start successfully"
+echo "====================================================="

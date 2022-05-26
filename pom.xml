@@ -13,7 +13,7 @@
 
     <version>1.0.5-SNAPSHOT</version>
 
-    <name>spingboot-k8s-test-demo</name>
+    <name>springboot-demo-k8s-cicd-test</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
